@@ -1,3 +1,3 @@
-import FeatureTab from "./FeatureTab.tsx";
+import FeatureTab from "./FeatureTab";
 
 export {FeatureTab}
