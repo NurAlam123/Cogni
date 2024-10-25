@@ -4,10 +4,50 @@ import productImage from "@/assets/product-image.png";
 import { useState } from "react";
 import FeatureTab from "./FeatureTab";
 import { tabs } from "@/constants";
+import {
+  animate,
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  ValueAnimationTransition,
+} from "framer-motion";
 
 // Features section
 const Features = () => {
   const [selectedTab, setSelectedTab] = useState(0);
+
+  const backgroundPositionX = useMotionValue(tabs[0].backgroundPositionX);
+  const backgroundPositionY = useMotionValue(tabs[0].backgroundPositionY);
+  const backgroundSizeX = useMotionValue(tabs[0].backgroundSizeX);
+
+  const backgroundPosition = useMotionTemplate`${backgroundPositionX}% ${backgroundPositionY}%`;
+  const backgroundSize = useMotionTemplate`${backgroundSizeX}% auto`;
+
+  const handleSelectedTab = (index: number) => {
+    setSelectedTab(index);
+
+    const options: ValueAnimationTransition = {
+      duration: 2,
+      ease: "easeInOut",
+    };
+
+    animate(
+      backgroundSizeX,
+      [backgroundSizeX.get(), 100, tabs[index].backgroundSizeX],
+      options,
+    );
+    animate(
+      backgroundPositionX,
+      [backgroundPositionX.get(), tabs[index].backgroundPositionX],
+      options,
+    );
+    animate(
+      backgroundPositionY,
+      [backgroundPositionY.get(), tabs[index].backgroundPositionY],
+      options,
+    );
+  };
+
   return (
     <section className="py-20 md:py-24">
       <div className="container">
@@ -22,16 +62,18 @@ const Features = () => {
           {tabs.map((tab, tabIndex) => (
             <FeatureTab
               {...tab}
-              onClick={() => setSelectedTab(tabIndex)}
+              onClick={() => handleSelectedTab(tabIndex)}
               selected={selectedTab === tabIndex}
               key={tab.title}
             />
           ))}
         </div>
         <div className="border border-white/20 rounded-xl mt-3 p-2.5">
-          <div
+          <motion.div
             className="aspect-video border border-white/20 rounded-lg bg-cover"
             style={{
+              backgroundSize,
+              backgroundPosition,
               backgroundImage: `url(${productImage.src})`,
             }}
           />
