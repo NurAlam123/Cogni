@@ -63,7 +63,7 @@ const FeatureTab = (
     <div
       ref={tabRef}
       onMouseEnter={handleTabHover}
-      className="border border-white/15 flex lg:flex-1 p-2.5 rounded-xl gap-2.5 items-center relative"
+      className="border border-white/15 flex lg:flex-1 p-2.5 rounded-xl gap-2.5 items-center relative cursor-pointer"
       onClick={props.onClick}
     >
       {props.selected && (
