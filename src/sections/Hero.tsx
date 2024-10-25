@@ -1,6 +1,6 @@
 "use client";
 
-import Button from "./ui/Button";
+import Button from "@/components/ui/Button";
 import starsBg from "@/assets/stars.png";
 
 import { motion, useScroll, useTransform } from "framer-motion";

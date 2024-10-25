@@ -2,7 +2,7 @@
 
 import productImage from "@/assets/product-image.png";
 import { useState } from "react";
-import FeatureTab from "./FeatureTab";
+import {FeatureTab} from "@/components";
 import { tabs } from "@/constants";
 import {
   animate,

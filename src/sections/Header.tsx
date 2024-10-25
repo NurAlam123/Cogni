@@ -1,7 +1,7 @@
 import LogoIcon from "@/assets/logo.svg";
 import MenuIcon from "@/assets/icon-menu.svg";
 import { navLinks } from "@/constants";
-import Button from "./ui/Button";
+import Button from "@/components/ui/Button";
 
 const Header = () => {
   return (

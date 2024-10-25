@@ -6,7 +6,7 @@ import {
   Hero,
   LogoTicker,
   Testimonials,
-} from "@/components";
+} from "@/sections";
 
 export default function Home() {
   return (
