@@ -4,4 +4,14 @@ import LogoTicker from "./LogoTicker";
 import Features from "./Features";
 import Testimonials from "./Testimonials";
 import CallToAction from "./CallToAction";
-export { Header, Hero, LogoTicker, Features, Testimonials, CallToAction };
+import Footer from "./Footer";
+
+export {
+  Header,
+  Hero,
+  LogoTicker,
+  Features,
+  Testimonials,
+  CallToAction,
+  Footer,
+};
