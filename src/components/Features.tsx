@@ -1,7 +1,6 @@
 "use client";
 
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import Image from "next/image";
 import productImage from "@/assets/product-image.png";
 
 const tabs = [
