@@ -1,4 +1,4 @@
-import { Header, Hero, LogoTicker } from "@/components";
+import { Features, Header, Hero, LogoTicker } from "@/components";
 
 export default function Home() {
   return (
@@ -6,6 +6,7 @@ export default function Home() {
       <Header />
       <Hero />
       <LogoTicker />
+      <Features />
     </>
   );
 }
