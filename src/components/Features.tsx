@@ -1,36 +1,13 @@
 "use client";
 
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import productImage from "@/assets/product-image.png";
+import { useState } from "react";
+import FeatureTab from "./FeatureTab";
+import { tabs } from "@/constants";
 
-const tabs = [
-  {
-    icon: "/assets/lottie/vroom.lottie",
-    title: "User-friendly dashboard",
-    isNew: false,
-    backgroundPositionX: 0,
-    backgroundPositionY: 0,
-    backgroundSizeX: 150,
-  },
-  {
-    icon: "/assets/lottie/click.lottie",
-    title: "One-click optimization",
-    isNew: false,
-    backgroundPositionX: 98,
-    backgroundPositionY: 100,
-    backgroundSizeX: 135,
-  },
-  {
-    icon: "/assets/lottie/stars.lottie",
-    title: "Smart keyword generator",
-    isNew: true,
-    backgroundPositionX: 100,
-    backgroundPositionY: 27,
-    backgroundSizeX: 177,
-  },
-];
-
+// Features section
 const Features = () => {
+  const [selectedTab, setSelectedTab] = useState(0);
   return (
     <section className="py-20 md:py-24">
       <div className="container">
@@ -42,26 +19,13 @@ const Features = () => {
           revolutionized the way business approach SEO.
         </p>
         <div className="mt-10 flex flex-col lg:flex-row gap-3">
-          {tabs.map((tab) => (
-            <div
+          {tabs.map((tab, tabIndex) => (
+            <FeatureTab
+              {...tab}
+              onClick={() => setSelectedTab(tabIndex)}
+              selected={selectedTab === tabIndex}
               key={tab.title}
-              className="border border-white/15 flex lg:flex-1 p-2.5 rounded-xl gap-2.5 items-center"
-            >
-              <div className="h-12 w-12 border border-white/15 rounded-lg inline-flex justify-center items-center">
-                <DotLottieReact
-                  src={tab.icon}
-                  className="h-5 w-5"
-                  autoplay
-                  loop
-                />
-              </div>
-              <div className="font-medium">{tab.title}</div>
-              {tab.isNew && (
-                <div className="text-xs rounded-full px-2 py-0.5 bg-[#8c44ff] text-black font-semibold">
-                  new
-                </div>
-              )}
-            </div>
+            />
           ))}
         </div>
         <div className="border border-white/20 rounded-xl mt-3 p-2.5">
