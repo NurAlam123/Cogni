@@ -10,7 +10,7 @@ import {
 
 export default function Home() {
   return (
-    <main className="overflow-hidden">
+    <>
       <Header />
       <Hero />
       <LogoTicker />
@@ -18,6 +18,6 @@ export default function Home() {
       <Testimonials />
       <CallToAction />
       <Footer />
-    </main>
+    </>
   );
 }
