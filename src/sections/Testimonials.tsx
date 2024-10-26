@@ -48,7 +48,7 @@ const Testimonials = () => {
         </p>
         <div className="flex overflow-hidden mt-10 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
           <motion.div
-            className="flex flex-none gap-5"
+            className="flex flex-none gap-5 pr-5"
             initial={{
               translateX: "-50%",
             }}
