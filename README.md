@@ -16,7 +16,7 @@ Cogni, a modern AI SEO landing page built with Next.js, Tailwind CSS, Framer Mot
 
 ## 🌐 Live Site
 
-Check out the live site: [Cogni](https://cogni-tau.vercel.app)
+Check out the live site: [Cogni](https://cogni-adv.pages.dev)
 
 ## ⚙️ Tech Stack
 
